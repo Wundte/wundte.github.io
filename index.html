@@ -287,6 +287,15 @@
             margin-bottom: 18px;
         }
 
+        .job-company a {
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        .job-company a:hover {
+            color: var(--text);
+        }
+
         .job ul {
             padding-left: 20px;
             color: var(--muted);
@@ -367,7 +376,6 @@
         /* ---------- MOBILE ---------- */
 
         @media (max-width: 800px) {
-
             nav {
                 display: none;
             }
@@ -488,7 +496,8 @@
                 <div class="buttons">
 
                     <a class="button primary"
-                       href="Konstantin_Prokhorov_CV_EN.pdf"
+                       id="cvLink"
+                       href="Konstantin_Prokhorov_Unity_Developer_CV.pdf"
                        target="_blank">
                         <span data-lang="en">View CV</span>
                         <span data-lang="ru">Резюме</span>
@@ -567,10 +576,13 @@
                         </h3>
 
                         <div class="job-company">
-                            Assaulter Games
+                            <a href="https://assaultergames.com/" target="_blank">
+                                Assaulter Games
+                            </a>
                         </div>
 
                         <ul>
+
                             <li>
                                 Built a turn-based roguelike strategy game
                                 from prototype to playable demo as the sole
@@ -605,6 +617,7 @@
                                 using Claude Code for requirements,
                                 architecture, implementation and code review.
                             </li>
+
                         </ul>
 
                     </div>
@@ -629,6 +642,7 @@
                         </div>
 
                         <ul>
+
                             <li>
                                 Led the studio migration from Unity to Godot
                                 while retaining the C# technology stack.
@@ -676,10 +690,13 @@
                         </h3>
 
                         <div class="job-company">
-                            Octavian Game Art
+                            <a href="https://www.octaviangameart.ru/en/home" target="_blank">
+                                Octavian Game Art
+                            </a>
                         </div>
 
                         <ul>
+
                             <li>
                                 Developed multiple hypercasual games for iOS,
                                 Android and WebGL from prototype to soft launch.
@@ -823,6 +840,10 @@
 <script>
     const enButton = document.getElementById("enButton");
     const ruButton = document.getElementById("ruButton");
+    const cvLink = document.getElementById("cvLink");
+
+    const englishCV = "Konstantin_Prokhorov_Unity_Developer_CV.pdf";
+    const russianCV = "Константин_Прохоров_Unity_Developer_Резюме.pdf";
 
     enButton.addEventListener("click", () => {
         document.body.classList.remove("ru");
@@ -831,6 +852,7 @@
         ruButton.classList.remove("active");
 
         document.documentElement.lang = "en";
+        cvLink.href = englishCV;
     });
 
     ruButton.addEventListener("click", () => {
@@ -840,6 +862,7 @@
         enButton.classList.remove("active");
 
         document.documentElement.lang = "ru";
+        cvLink.href = russianCV;
     });
 </script>
 
